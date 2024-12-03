@@ -1,12 +1,7 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { Stack } from "expo-router";
 
 const PasswordLayout = () => {
-  return (
-    <View>
-      <Text>PasswordLayout</Text>
-    </View>
-  )
-}
+  return <Stack screenOptions={{ headerShown: false }} />;
+};
 
-export default PasswordLayout
+export default PasswordLayout;

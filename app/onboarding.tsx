@@ -47,7 +47,7 @@ const OnboardingScreen = () => {
 
     return (
       <View className="flex-1 items-center pt-4">
-        <Text className="text-lg font-bold text-center text-blue-500 mb-1">
+        <Text className="text-lg font-bold text-center text-primary mb-1">
           {title}
         </Text>
         <Text className="text-base text-gray-600 text-center my-2 max-w-[75%]">
@@ -58,7 +58,7 @@ const OnboardingScreen = () => {
             <View
               key={index}
               className={`h-2 w-2 rounded-full mx-1 ${
-                index === currentSlide ? "bg-blue-500" : "bg-gray-300"
+                index === currentSlide ? "bg-primary" : "bg-gray-300"
               }`}
             />
           ))}
@@ -68,7 +68,7 @@ const OnboardingScreen = () => {
             onPress={() => {
               router.navigate("/auth");
             }}
-            className="text-blue-500"
+            className="text-primary"
           >
             Skip
           </Text>
@@ -80,7 +80,7 @@ const OnboardingScreen = () => {
                 handleTabClick(currentSlide + 1);
               }
             }}
-            className="bg-blue-500 rounded py-2 px-4"
+            className="bg-primary rounded py-2 px-4"
           >
             <Text className="text-white">{isLastSlide ? "Done" : "Next"}</Text>
           </TouchableOpacity>

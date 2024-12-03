@@ -1,9 +1,9 @@
 import React, { forwardRef } from "react";
-import { TextInput, TextStyle, ViewStyle } from "react-native";
+import { Text, TextInput, TextStyle, View, ViewStyle } from "react-native";
 
 interface InputProps extends React.ComponentProps<typeof TextInput> {
   placeholder?: string;
-  value?: string;
+  value?: string ;
   onChangeText?: (text: string) => void;
   style?: ViewStyle & TextStyle;
   inputStyle?: TextStyle;
@@ -22,6 +22,7 @@ interface InputProps extends React.ComponentProps<typeof TextInput> {
   maxLength?: number;
   multiline?: boolean;
   className?: string;
+  label?: string;
 }
 
 const Input = forwardRef<TextInput, InputProps>((props, ref) => {
@@ -44,5 +45,15 @@ const Input = forwardRef<TextInput, InputProps>((props, ref) => {
     />
   );
 });
+
+
+export const InputWithLabel = ({ label, ...props }: InputProps) => {
+  return (
+    <View className="justify-between items-start my-2 w-[90%]">
+      <Text className="text-base text-gray-500 text-start ">{label}</Text>
+      <Input {...props} />
+    </View>
+  );
+}
 
 export default Input;

@@ -19,7 +19,7 @@ const IndexAuth = () => {
           onPress={() => {
             router.navigate("/auth/SignUp");
           }}
-          className="bg-blue-600 rounded-full py-2  w-3/4 mb-3"
+          className="bg-primary rounded-full py-2  w-3/4 mb-3 border border-primary"
         >
           <Text className="text-white text-center">Sign Up</Text>
         </TouchableOpacity>
@@ -27,9 +27,9 @@ const IndexAuth = () => {
           onPress={() => {
             router.navigate("/auth/SignIn");
           }}
-          className="bg-white border border-blue-500 rounded-full py-2  w-3/4"
+          className="bg-white border border-primary rounded-full py-2  w-3/4"
         >
-          <Text className="text-blue-800 text-center">Login</Text>
+          <Text className="text-primary text-center">Login</Text>
         </TouchableOpacity>
       </View>
     </View>

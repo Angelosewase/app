@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { View, TextInput, Text } from "react-native";
+import { View, TextInput, Text, TouchableOpacity } from "react-native";
 import { Button } from "react-native-paper";
 // import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Back } from "@/components/ui/Back";
-import Input from "@/components/ui/Input";
+import Input, { InputWithLabel } from "@/components/ui/Input";
 import { Picker } from "@react-native-picker/picker";
+import Feather from "@expo/vector-icons/Feather";
 
 const ProfileScreen = () => {
   const [gender, setGender] = useState("Male");
@@ -13,47 +14,46 @@ const ProfileScreen = () => {
 
   const handleGenderChange = (newGender: string) => setGender(newGender);
   const handleAgeChange = (newAge: string) => setAge(newAge);
-  const handleLocationChange = (newLocation: string) => setLocation(newLocation);
+  const handleLocationChange = (newLocation: string) =>
+    setLocation(newLocation);
 
   return (
     <View className="flex-1 bg-white">
-      <Back label="profile" />
+      <Back label="profile" className="ml-4 mt-4" />
       <View className="flex-1 p-4 items-center">
-        <View className="border border-gray-200 h-40 w-[90%] rounded-lg flex items-center justify-center ">
-          <Text className="text-gray-500 text-center">Upload profile pictures</Text>
-        </View>
+        <TouchableOpacity className="shadow  h-40 w-[90%] rounded flex items-center justify-center ">
+          <Feather name="upload-cloud" size={24} color="black" />
+          <Text className="text-gray-500 text-center">
+            Upload profile pictures
+          </Text>
+        </TouchableOpacity>
+        <Text className="text-base text-gray-500 text-start w-[90%]">Gender</Text>
+        <View className="w-[90%] border border-gray-200 rounded-lg p-0 ">
         <Picker
           selectedValue={gender}
           onValueChange={(itemValue) => handleGenderChange(itemValue)}
-          style={{ width: '90%' }}
+          style={{ width: "100%" , padding:0, margin:0}}
+          itemStyle={{padding:0, margin:0, fontSize:10, height:45}}
         >
           <Picker.Item label="Male" value="Male" />
           <Picker.Item label="Female" value="Female" />
           <Picker.Item label="Other" value="Other" />
         </Picker>
+        </View>
+    
+        <InputWithLabel label="Age" className="w-full border border-gray-200  rounded-lg " value={age}/>
+      <InputWithLabel label="Location" className="w-full border border-gray-200  rounded-lg " value={location}/>
 
-        <Input
-          placeholder="Age"
-          value={age}
-          keyboardType="numeric"
-          onChangeText={handleAgeChange}
-          className="mb-4"
-        />
+        <TouchableOpacity
+           className=" bg-primary w-[90%] rounded-full p-3 items-center justify-center"
+          onPress={() => console.log("Continue pressed")}
 
-        <Input
-          placeholder="Location"
-          value={location}
-          onChangeText={handleLocationChange}
-          className="mb-4"
-        />
-
-        <Button mode="contained" onPress={() => console.log("Continue pressed")}>
-          Continue
-        </Button>
+        >
+          <Text className="text-white">Continue </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
 };
 
 export default ProfileScreen;
-

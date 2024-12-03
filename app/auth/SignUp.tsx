@@ -19,7 +19,7 @@ const SignupScreen = () => {
           source={require("@/assets/images/splash.png")} // Replace with your logo
           className="w-20 h-20 "
         />
-        <Text className="text-2xl font-bold text-blue-600 mt-4">
+        <Text className="text-2xl font-bold text-primary mt-4">
           Insta Health
         </Text>
         <Text className="text-gray-500 mt-2">Create your free account</Text>
@@ -62,13 +62,13 @@ const SignupScreen = () => {
         />
         <Text className="text-sm text-gray-500 flex-1">
           By creating an account, you agree to our{" "}
-          <Text className="text-blue-600">Terms of use</Text> and{" "}
-          <Text className="text-blue-600">Privacy Policy</Text>.
+          <Text className="text-primary">Terms of use</Text> and{" "}
+          <Text className="text-primary">Privacy Policy</Text>.
         </Text>
       </View>
 
       {/* Create Account Button */}
-      <TouchableOpacity className="bg-blue-600 rounded-full py-2 " onPress={()=>{
+      <TouchableOpacity className="bg-primary rounded-full py-2 " onPress={()=>{
         //function to create an account
         router.navigate("/auth/SetupProfile")
       }}>
