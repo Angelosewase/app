@@ -45,7 +45,7 @@ const SignIn = () => {
           className="bg-primary rounded-full py-2 w-[90%] "
           onPress={() => {
             //function to create an account
-            // router.navigate("/auth/SetupProfile")
+            router.navigate("/(tabs)/home")
           }}
         >
           <Text className="text-center text-white text-lg font-bold ">

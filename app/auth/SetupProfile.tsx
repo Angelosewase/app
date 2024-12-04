@@ -27,27 +27,36 @@ const ProfileScreen = () => {
             Upload profile pictures
           </Text>
         </TouchableOpacity>
-        <Text className="text-base text-gray-500 text-start w-[90%]">Gender</Text>
+        <Text className="text-base text-gray-500 text-start w-[90%]">
+          Gender
+        </Text>
         <View className="w-[90%] border border-gray-200 rounded-lg p-0 ">
-        <Picker
-          selectedValue={gender}
-          onValueChange={(itemValue) => handleGenderChange(itemValue)}
-          style={{ width: "100%" , padding:0, margin:0}}
-          itemStyle={{padding:0, margin:0, fontSize:10, height:45}}
-        >
-          <Picker.Item label="Male" value="Male" />
-          <Picker.Item label="Female" value="Female" />
-          <Picker.Item label="Other" value="Other" />
-        </Picker>
+          <Picker
+            selectedValue={gender}
+            onValueChange={(itemValue) => handleGenderChange(itemValue)}
+            style={{ width: "100%", padding: 0, margin: 0 }}
+            itemStyle={{ padding: 0, margin: 0, fontSize: 10, height: 45 }}
+          >
+            <Picker.Item label="Male" value="Male" />
+            <Picker.Item label="Female" value="Female" />
+            <Picker.Item label="Other" value="Other" />
+          </Picker>
         </View>
-    
-        <InputWithLabel label="Age" className="w-full border border-gray-200  rounded-lg " value={age}/>
-      <InputWithLabel label="Location" className="w-full border border-gray-200  rounded-lg " value={location}/>
+
+        <InputWithLabel
+          label="Age"
+          className="w-full border border-gray-200  rounded-lg "
+          value={age}
+        />
+        <InputWithLabel
+          label="Location"
+          className="w-full border border-gray-200  rounded-lg "
+          value={location}
+        />
 
         <TouchableOpacity
-           className=" bg-primary w-[90%] rounded-full p-3 items-center justify-center"
+          className=" bg-primary w-[90%] rounded-full p-3 items-center justify-center"
           onPress={() => console.log("Continue pressed")}
-
         >
           <Text className="text-white">Continue </Text>
         </TouchableOpacity>

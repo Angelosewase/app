@@ -54,7 +54,8 @@ const OtpVerification = () => {
               />
             ))}
           </View>
-
+        </View>
+        <View className="mt-20">
           <Text className=" text-gray-500  text-sm w-full text-center">
             Resend again in <Text className="text-primary">1 min</Text>
           </Text>
@@ -66,7 +67,7 @@ const OtpVerification = () => {
           " bg-primary w-[90%] rounded-full p-3 items-center justify-center mx-auto mt-auto mb-10 " +
           (!isVerified ? "opacity-50" : "")
         }
-        onPress={() => router.navigate("/auth/Password/OtpVerification")}
+        onPress={() => router.navigate("/auth/Password/reset")}
         disabled={!isVerified}
       >
         <Text className="text-white">verify otp </Text>

@@ -22,16 +22,16 @@ const PasswordInput = ({ placeholder }: { placeholder: string }) => {
   };
 
   return (
-    <View className="border-2 border-gray-200 rounded-lg flex-row justify-between w-full   items-center my-2 bg-white  p-2 px-3">
+    <View className=" rounded-lg flex-row  w-full items-center my-2 bg-white border border-gray-200  ">
       <TextInput
-        className="placeholder:text-lg"
+        className="placeholder:text-lg flex-1 "
         placeholder={placeholder}
         keyboardType="default"
         value={showPassword ? password : hiddenPassword}
         onChangeText={(value) => handlePasswordChange(value)}
         secureTextEntry={!showPassword}
       />
-      <TouchableOpacity onPress={() => setShowPassword(!showPassword)} className="mr-3">
+      <TouchableOpacity onPress={() => setShowPassword(!showPassword)} className="" style={{width:30, justifyContent:'center', alignContent:'center'}} >
         {showPassword ? (
           <AntDesign name="eye" size={20} color="black" />
         ) : (
