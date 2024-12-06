@@ -65,7 +65,7 @@ export const HeaderWithLabelWithIcon = ({
   label: string;
 }) => {
   return (
-    <View className="flex flex-row justify-between">
+    <View className="flex flex-row justify-between items-center">
       <View>
         <Back label={label} className="text-lg ml-6  font-semibold" />
       </View>

@@ -86,7 +86,7 @@ const TabsHomeIndex = () => {
         <View className="w-full mt-5 h-52  ">
           <View className="w-[90%] flex-row justify-between mx-auto">
             <Text className="text-base">Top doctors</Text>
-            <Text className="text-primary text-base">see all</Text>
+            <Text className="text-primary text-base" onPress={()=>router.navigate("/(tabs)/home/topDoctor")}>see all</Text>
           </View>
           <FlatList
             className="h-[80%] ml-auto  gap-4 w-[95%] mt-3"
@@ -106,7 +106,7 @@ const TabsHomeIndex = () => {
         </View>
         <View className="w-[90%] flex-row justify-between mx-auto">
           <Text className="text-base">Recommendations</Text>
-          <Text className="text-primary text-base">see all</Text>
+          <Text className="text-primary text-base" >see all</Text>
         </View>
       </View>
     </View>
