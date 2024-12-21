@@ -6,6 +6,7 @@ import { Back } from "@/components/ui/Back";
 import Input, { InputWithLabel } from "@/components/ui/Input";
 import { Picker } from "@react-native-picker/picker";
 import Feather from "@expo/vector-icons/Feather";
+import { router } from "expo-router";
 
 const ProfileScreen = () => {
   const [gender, setGender] = useState("Male");
@@ -56,7 +57,7 @@ const ProfileScreen = () => {
 
         <TouchableOpacity
           className=" bg-primary w-[90%] rounded-full p-3 items-center justify-center"
-          onPress={() => console.log("Continue pressed")}
+          onPress={() => router.navigate("/(tabs)/home")}
         >
           <Text className="text-white">Continue </Text>
         </TouchableOpacity>

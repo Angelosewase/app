@@ -5,6 +5,7 @@ import { useRouter } from "expo-router";
 
 const Congrats = () => {
   const router = useRouter();
+  
   return (
     <View className="flex-1 bg-white items-center ">
       <LoadingModal visible={false}/>
@@ -24,7 +25,6 @@ const Congrats = () => {
       <TouchableOpacity
         className="bg-primary rounded-full py-2 w-[90%] mt-auto mb-10"
         onPress={() => {
-          // @ts-expect-error 
             router.navigate("/(tabs)/home")
         }}
       >
